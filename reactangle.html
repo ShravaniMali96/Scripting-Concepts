@@ -1,0 +1,25 @@
+<html>
+<head>
+	<title>Area of Reactangle</title>
+</head>
+<body>
+<script>
+class Reactangle
+{
+	constructor (length,breadth)
+	{
+		this.length = length;
+		this.breadth = breadth;
+	}
+	calculateArea()
+	{
+		return this.length * this.breadth;
+	}
+}
+let l = Number(prompt("Enter Length:"));
+let b = Number(prompt("Enter Beradth:"));
+let rect = new Reactangle(l,b);
+document.write("Area of Rectangle = " + rect.calculateArea());
+</script>
+</body>
+</html>

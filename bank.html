@@ -1,0 +1,60 @@
+<html>
+<head>
+<title>Bank Account</title>
+</head>
+<body>
+<h2>Bank Account Details</h2>
+<p id="details"></p>
+<input type="number" id="amount" placeholder="Enter amount">
+<br>
+<button onclick="depositeMoney()">Deposite</button>
+<button onclick="withdraMoney()">Withdraw</button>
+<script>
+class BankAccount
+{
+	constructor(name,accountNumber,balance)
+	{
+		this.name = name;
+		this.accountNumber = accountNumber;
+		this.balance = balance;
+	}
+	deposite(amount)
+	{
+		this.balance += amount;
+	}
+	withdraw(amount)
+	{
+		if(amount <= this.balance)
+		{
+			this.balance -= amount;
+		}
+		else
+		{
+			alert("Insufficient Balance!");
+		}
+	}
+	displayDetails()
+	{
+		document.getElementById("details").innerHTML = 
+			"Account Holder Name: " + this.name +
+			"Account Number: " + this.accountNumber +
+			"Balance: " + this.balance;
+	}
+}
+let account = new BankAccount("Shravani ","1234567890 ",900000);
+account.displayDetails();
+function depositeMoney()
+{
+	let amt = Number(document.getElementById("amount").value);
+	account.deposite(amt);
+	account.displayDetails();
+}
+function withdraMoney()
+{
+	let amt = Number(document.getElementById("amount").value);
+	account.withdraw(amt);
+	account.displayDetails();
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Array Input and Output</title>
+</head>
+<body>
+
+<h2>Enter Array Elements</h2>
+
+<label>Enter array size:</label>
+<input type="number" id="size">
+<br><br>
+
+<button onclick="getArray()">Enter Elements</button>
+
+<p id="output"></p>
+
+<script>
+    function getArray() {
+        var size = document.getElementById("size").value;
+        var arr = [];
+        var i;
+
+        if (size <= 0) {
+            alert("Please enter a valid array size");
+            return;
+        }
+
+        for (i = 0; i < size; i++) {
+            arr[i] = prompt("Enter element " + (i + 1));
+        }
+
+        document.getElementById("output").innerHTML =
+            "Array Elements: " + arr.join(", ");
+    }
+</script>
+
+</body>
+</html>

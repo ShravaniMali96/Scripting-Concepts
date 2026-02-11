@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scroll Event</title>
+    <style>
+        body {
+            height: 2000px;
+        }
+    </style>
+</head>
+<body>
+
+<h3>Scroll the page</h3>
+
+<p id="scrollMsg"></p>
+
+<script>
+    window.onscroll = function () {
+        document.getElementById("scrollMsg").innerHTML =
+            "Page is being scrolled";
+    };
+</script>
+
+</body>
+</html>

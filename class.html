@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Class in JS</title>
+</head>
+<body>
+
+<h2>Student Details</h2>
+<p id="result"></p>
+
+<script>
+    class Student {
+        constructor(id, name, roll) {
+            this.id = id;
+            this.name = name;
+            this.roll = roll;
+        }
+
+        display() {
+            document.getElementById("result").innerHTML =
+                "Id of student: " + this.id + "<br>" +
+                "Name of student: " + this.name + "<br>" +
+                "Roll number: " + this.roll;
+        }
+    }
+
+    let id = prompt("Enter the id");
+    let name = prompt("Enter the name");
+    let roll = parseInt(prompt("Enter the roll number"));
+
+    let s1 = new Student(id, name, roll);
+    s1.display();
+</script>
+
+</body>
+</html>

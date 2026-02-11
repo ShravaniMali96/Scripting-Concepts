@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sorting Three Numbers</title>
+</head>
+<body>
+
+<h2>Sorted Numbers</h2>
+<p id="output"></p>
+
+<script>
+    function sortNumbers(a, b, c) {
+        let result = "";
+
+        if (a >= b && a >= c) {
+            if (b >= c) {
+                result = a + ", " + b + ", " + c;
+            } else {
+                result = a + ", " + c + ", " + b;
+            }
+        }
+        else if (b >= a && b >= c) {
+            if (a >= c) {
+                result = b + ", " + a + ", " + c;
+            } else {
+                result = b + ", " + c + ", " + a;
+            }
+        }
+        else {
+            if (a >= b) {
+                result = c + ", " + a + ", " + b;
+            } else {
+                result = c + ", " + b + ", " + a;
+            }
+        }
+
+        document.getElementById("output").innerHTML =
+            "Numbers in descending order: <b>" + result + "</b>";
+    }
+
+    let a = parseInt(prompt("Enter the first number"));
+    let b = parseInt(prompt("Enter the second number"));
+    let c = parseInt(prompt("Enter the third number"));
+
+    sortNumbers(a, b, c);
+</script>
+
+</body>
+</html>

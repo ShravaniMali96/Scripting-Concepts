@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <h2>Student Portal</h2>
+
+    <input type="text" id="name" placeholder="Name">
+    <input type="number" id="age" placeholder="Age">
+    <input type="text" id="course" placeholder="Course">
+    
+    <br><br>
+
+    <a href="#" onclick="show()">Display Details</a>
+
+    <div id="out"></div>
+
+    <script>
+        function show() {
+            let n = document.getElementById("name").value;
+            let a = document.getElementById("age").value;
+            let c = document.getElementById("course").value;
+
+            if (n == "" || a == "" || c == "") {
+                alert("Empty fields!");
+                return;
+            }
+
+            let s = { name: n, age: a, course: c };
+
+            document.getElementById("out").innerHTML = 
+                "<p>Name: " + s.name + "<br>" +
+                "Age: " + s.age + "<br>" +
+                "Course: " + s.course + "</p>";
+        }
+    </script>
+
+</body>
+</html>
